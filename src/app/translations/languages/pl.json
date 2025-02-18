@@ -27,5 +27,15 @@
     },
     "nextQuestion": "Następne pytanie",
     "seeResults": "Zobacz wyniki"
+  },
+  "results": {
+    "correctAnswers": "Poprawne odpowiedzi: {{ value }}",
+    "wrongAnswers": "Niepoprawne odpowiedzi: {{ value }}",
+    "text": {
+      "bad": "Nie poszło ci zbyt dobrze",
+      "average": "Poszło ci dobrze, ale warto jeszcze poćwiczyć",
+      "good": "Poszło ci wyśmienicie!"
+    },
+    "seeSummary": "Zobacz podsumowanie"
   }
 }

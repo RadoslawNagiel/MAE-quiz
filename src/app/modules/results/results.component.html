@@ -1,1 +1,12 @@
-<p>results</p>
+<section id="results">
+  <div>
+    {{ "results.correctAnswers" | translate: { value: correctAnswers() } }}
+  </div>
+  <div>
+    {{ "results.wrongAnswers" | translate: { value: wrongAnswers() } }}
+  </div>
+  <div>
+    {{ resultsText() | translate }}
+  </div>
+  <app-button [text]="'results.seeSummary'" [routerLink]="'/summary'" />
+</section>

@@ -6,9 +6,9 @@ export interface Question {
   question: string;
   answers: {
     key: string;
-    correct: boolean;
     value: string;
   }[];
+  correctAnswer: string;
   selectedAnswer?: string;
 }
 
@@ -36,22 +36,29 @@ export class QuizService {
           ]).map((answerKey) => {
             return {
               key: answerKey,
-              correct: answerKey === `rightAnswer`,
               value: `quiz.${key}.${answerKey}`,
             };
           }),
+          correctAnswer: `rightAnswer`,
         };
       }),
     );
   }
 
   selectAnswer(index: number, key: string) {
-    const questions = [...this.questions()];
+    const questions = structuredClone(this.questions());
     questions[index].selectedAnswer = key;
     this.questions.set(questions);
   }
 
   resetQuiz() {
     this.setQuestions();
+  }
+
+  isQuizAnswered(): boolean {
+    const questions = structuredClone(this.questions());
+    return (
+      questions.filter((question) => !question.selectedAnswer).length === 0
+    );
   }
 }

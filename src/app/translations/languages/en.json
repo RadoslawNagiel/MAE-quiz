@@ -27,5 +27,15 @@
     },
     "nextQuestion": "Next question",
     "seeResults": "See results"
+  },
+  "results": {
+    "correctAnswers": "Correct answers: {{ value }}",
+    "wrongAnswers": "Incorrect answers: {{ value }}",
+    "text": {
+      "bad": "You didn't do too well",
+      "average": "You did well, but it is still worth practising",
+      "good": "You've done brilliantly!"
+    },
+    "seeSummary": "See summary"
   }
 }

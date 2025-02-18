@@ -1,4 +1,6 @@
+import { inject } from '@angular/core';
 import { Routes } from '@angular/router';
+import { QuizService } from './shared/services/quiz.service';
 
 export const routes: Routes = [
   {
@@ -11,10 +13,12 @@ export const routes: Routes = [
   },
   {
     path: `results`,
+    canActivate: [() => inject(QuizService).isQuizAnswered()],
     loadComponent: async () => import(`./modules/results/results.component`),
   },
   {
     path: `summary`,
+    canActivate: [() => inject(QuizService).isQuizAnswered()],
     loadComponent: async () => import(`./modules/summary/summary.component`),
   },
   {
