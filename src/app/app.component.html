@@ -1,0 +1,11 @@
+<header>
+  <div [routerLink]="'/'">HOME</div>
+  <div id="languages-container">
+    @for(language of languages; track $index){
+    <div (click)="setLanguage(language.langKey)">
+      {{ language.value | translate }}
+    </div>
+    }
+  </div>
+</header>
+<router-outlet />

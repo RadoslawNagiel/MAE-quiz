@@ -1,3 +1,4 @@
-<p>
-  {{ "home.welcomeText" | translate }}
-</p>
+<section id="home">
+  <h1>{{ "home.welcomeText" | translate }}</h1>
+  <app-button [text]="'home.startButton'" [routerLink]="'/quiz'" />
+</section>

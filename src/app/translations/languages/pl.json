@@ -1,5 +1,6 @@
 {
   "home": {
-    "welcomeText": "Witaj!"
+    "welcomeText": "Witaj!",
+    "startButton": "Rozpocznij quiz"
   }
 }
