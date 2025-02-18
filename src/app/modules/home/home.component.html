@@ -1,4 +1,8 @@
 <section id="home">
   <h1>{{ "home.welcomeText" | translate }}</h1>
-  <app-button [text]="'home.startButton'" [routerLink]="'/quiz'" />
+  <app-button
+    [text]="'home.startButton'"
+    [routerLink]="'/quiz'"
+    (onClick)="quizService.resetQuiz()"
+  />
 </section>

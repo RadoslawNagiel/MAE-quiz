@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -11,4 +11,5 @@ import { TranslateModule } from '@ngx-translate/core';
 export default class ButtonComponent {
   text = input.required<string>();
   routerLink = input<string>();
+  onClick = output();
 }

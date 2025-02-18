@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import ButtonComponent from '../../shared/dumb-components/button/button.component';
+import { QuizService } from '../../shared/services/quiz.service';
 
 @Component({
   selector: 'app-home',
@@ -8,4 +9,6 @@ import ButtonComponent from '../../shared/dumb-components/button/button.componen
   templateUrl: './home.component.html',
   styleUrl: './home.style.scss',
 })
-export default class HomeComponent {}
+export default class HomeComponent {
+  readonly quizService = inject(QuizService);
+}

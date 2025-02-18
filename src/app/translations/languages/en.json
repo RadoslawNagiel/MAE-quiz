@@ -2,5 +2,30 @@
   "home": {
     "welcomeText": "Welcome!",
     "startButton": "Start the quiz"
+  },
+  "quiz": {
+    "question1": {
+      "value": "Who painted the famous artwork „The Battle of Grunwald”?",
+      "rightAnswer": "Jan Matejko",
+      "wrongAnswer1": "Jacek Malczewski",
+      "wrongAnswer2": "Józef Chełmoński",
+      "wrongAnswer3": "Stanisław Wyspiański"
+    },
+    "question2": {
+      "value": "Which artwork is an example of Polish Symbolist painting?",
+      "rightAnswer": "„The Death of Ellenai” – Jacek Malczewski",
+      "wrongAnswer1": "„Storks” – Józef Chełmoński",
+      "wrongAnswer2": "„Self-Portrait in Green” – Olga Boznańska",
+      "wrongAnswer3": "„Jewess with Oranges” – Aleksander Gierymski"
+    },
+    "question3": {
+      "value": "Which art style is Stanisław Wyspiański associated with?",
+      "rightAnswer": "Art Nouveau",
+      "wrongAnswer1": "Impressionism",
+      "wrongAnswer2": "Baroque",
+      "wrongAnswer3": "Cubism"
+    },
+    "nextQuestion": "Next question",
+    "seeResults": "See results"
   }
 }

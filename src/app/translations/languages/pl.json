@@ -2,5 +2,30 @@
   "home": {
     "welcomeText": "Witaj!",
     "startButton": "Rozpocznij quiz"
+  },
+  "quiz": {
+    "question1": {
+      "value": "Kto namalował słynny obraz „Bitwa pod Grunwaldem”?",
+      "rightAnswer": "Jan Matejko",
+      "wrongAnswer1": "Jacek Malczewski",
+      "wrongAnswer2": "Józef Chełmoński",
+      "wrongAnswer3": "Stanisław Wyspiański"
+    },
+    "question2": {
+      "value": "Które dzieło jest przykładem polskiego malarstwa symbolistycznego?",
+      "rightAnswer": "„Śmierć Ellenai” – Jacek Malczewski",
+      "wrongAnswer1": "„Bociany” – Józef Chełmoński",
+      "wrongAnswer2": "„Autoportret w zieleni” – Olga Boznańska",
+      "wrongAnswer3": "„Żydówka z pomarańczami” – Aleksander Gierymski"
+    },
+    "question3": {
+      "value": "Z jakim stylem kojarzony jest Stanisław Wyspiański?",
+      "rightAnswer": "Secesja",
+      "wrongAnswer1": "Impresjonizm",
+      "wrongAnswer2": "Barok",
+      "wrongAnswer3": "Kubizm"
+    },
+    "nextQuestion": "Następne pytanie",
+    "seeResults": "Zobacz wyniki"
   }
 }
