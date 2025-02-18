@@ -2,7 +2,7 @@
   <div [routerLink]="'/'">HOME</div>
   <div id="languages-container">
     @for(language of languages; track $index){
-    <div (click)="setLanguage(language.langKey)">
+    <div (click)="languageService.setLanguage(language.langKey)">
       {{ language.value | translate }}
     </div>
     }
