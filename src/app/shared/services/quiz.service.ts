@@ -46,9 +46,7 @@ export class QuizService {
   }
 
   selectAnswer(index: number, key: string) {
-    const questions = {
-      ...this.questions(),
-    };
+    const questions = [...this.questions()];
     questions[index].selectedAnswer = key;
     this.questions.set(questions);
   }

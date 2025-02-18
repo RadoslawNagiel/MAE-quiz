@@ -14,6 +14,10 @@ export default class QuizComponent {
   readonly quizService = inject(QuizService);
   currentQuestion = signal(0);
 
+  questions = computed(() => {
+    return this.quizService.questions();
+  });
+
   selectedAnswerKey = computed(() => {
     return this.quizService.questions()[this.currentQuestion()].selectedAnswer;
   });

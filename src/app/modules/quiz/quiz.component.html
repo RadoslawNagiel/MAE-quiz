@@ -1,5 +1,5 @@
 <section id="quiz">
-  @if(quizService.questions()[currentQuestion()]; as question){
+  @if(questions()[currentQuestion()]; as question){
   <h1>{{ question.question | translate }}</h1>
 
   @for(answer of question.answers; track $index){
@@ -11,10 +11,9 @@
   </div>
   } @if(selectedAnswerKey()){
   <div>
-    @if(currentQuestion() == quizService.questions().length - 1){
+    @if(currentQuestion() === questions().length - 1){
     <app-button [text]="'quiz.seeResults'" [routerLink]="'/results'" />
     } @else {
-
     <app-button [text]="'quiz.nextQuestion'" (onClick)="nextClick()" />
     }
   </div>
