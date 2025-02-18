@@ -11,5 +11,5 @@ import { TranslateModule } from '@ngx-translate/core';
 export default class ButtonComponent {
   text = input.required<string>();
   routerLink = input<string>();
-  onClick = output();
+  clicked = output();
 }
