@@ -13,12 +13,12 @@ export const routes: Routes = [
   },
   {
     path: `results`,
-    canActivate: [() => inject(QuizService).isQuizAnswered()],
+    canActivate: [() => inject(QuizService).isQuizAnswered(true)],
     loadComponent: async () => import(`./modules/results/results.component`),
   },
   {
     path: `summary`,
-    canActivate: [() => inject(QuizService).isQuizAnswered()],
+    canActivate: [() => inject(QuizService).isQuizAnswered(true)],
     loadComponent: async () => import(`./modules/summary/summary.component`),
   },
   {

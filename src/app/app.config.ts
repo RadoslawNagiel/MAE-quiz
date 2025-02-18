@@ -4,13 +4,14 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideTranslateService, TranslateLoader } from '@ngx-translate/core';
 import { TranslationService } from './translations/translation.service';
+import { environment } from '../environments/environment';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideTranslateService({
-      defaultLanguage: 'pl',
+      defaultLanguage: environment.defaultLanguage,
       loader: {
         provide: TranslateLoader,
         useClass: TranslationService,

@@ -1,53 +1,26 @@
-import { Injectable, signal } from '@angular/core';
-import { shuffleArray } from '../functions/shuffle-array';
-
-export interface Question {
-  key: string;
-  question: string;
-  answers: {
-    key: string;
-    value: string;
-  }[];
-  correctAnswer: string;
-  selectedAnswer?: string;
-}
+import { inject, Injectable, signal } from '@angular/core';
+import { environment } from '../../../environments/environment';
+import { Question } from '../types/interfaces';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class QuizService {
+  private readonly router = inject(Router);
   questions = signal<Question[]>([]);
 
   constructor() {
     this.setQuestions();
   }
 
-  setQuestions() {
-    this.questions.set(
-      [`question1`, `question2`, `question3`].map((key) => {
-        return {
-          key,
-          question: `quiz.${key}.value`,
-          answers: shuffleArray([
-            `rightAnswer`,
-            `wrongAnswer1`,
-            `wrongAnswer2`,
-            `wrongAnswer3`,
-          ]).map((answerKey) => {
-            return {
-              key: answerKey,
-              value: `quiz.${key}.${answerKey}`,
-            };
-          }),
-          correctAnswer: `rightAnswer`,
-        };
-      }),
-    );
+  private setQuestions() {
+    this.questions.set(structuredClone(environment.quizQuestions));
   }
 
   selectAnswer(index: number, key: string) {
     const questions = structuredClone(this.questions());
-    questions[index].selectedAnswer = key;
+    questions[index].selectedAnswerKey = key;
     this.questions.set(questions);
   }
 
@@ -55,10 +28,13 @@ export class QuizService {
     this.setQuestions();
   }
 
-  isQuizAnswered(): boolean {
+  isQuizAnswered(redirect = false): boolean {
     const questions = structuredClone(this.questions());
-    return (
-      questions.filter((question) => !question.selectedAnswer).length === 0
-    );
+    const isAnswered =
+      questions.filter((question) => !question.selectedAnswerKey).length === 0;
+    if (redirect && !isAnswered) {
+      this.router.navigate(['']);
+    }
+    return isAnswered;
   }
 }

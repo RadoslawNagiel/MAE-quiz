@@ -1,13 +1,13 @@
 <section id="quiz">
   @if (questions()[currentQuestion()]; as question) {
-    <h1>{{ question.question | translate }}</h1>
+    <h1>{{ question.translationKey | translate }}</h1>
 
     @for (answer of question.answers; track $index) {
       <input
         type="button"
         [ngClass]="{ 'selected-answer': selectedAnswerKey() === answer.key }"
         (click)="quizService.selectAnswer(currentQuestion(), answer.key)"
-        [value]="answer.value | translate"
+        [value]="answer.translationKey | translate"
       />
     }
 

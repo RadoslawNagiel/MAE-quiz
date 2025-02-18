@@ -19,7 +19,8 @@ export default class QuizComponent {
   });
 
   selectedAnswerKey = computed(() => {
-    return this.quizService.questions()[this.currentQuestion()].selectedAnswer;
+    return this.quizService.questions()[this.currentQuestion()]
+      .selectedAnswerKey;
   });
 
   nextClick() {

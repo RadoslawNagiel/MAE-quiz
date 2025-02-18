@@ -1,8 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { languages, LanguageService } from './shared/services/language.service';
+import { LanguageService } from './shared/services/language.service';
 import { IdleService } from './shared/services/idle.service';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,5 @@ import { IdleService } from './shared/services/idle.service';
 export class AppComponent {
   readonly languageService = inject(LanguageService);
   readonly idleService = inject(IdleService);
-  readonly languages = languages;
+  readonly languages = environment.availableLanguages;
 }

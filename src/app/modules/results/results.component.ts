@@ -2,6 +2,7 @@ import { Component, computed, inject } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 import ButtonComponent from '../../shared/dumb-components/button/button.component';
 import { QuizService } from '../../shared/services/quiz.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-results',
@@ -15,7 +16,7 @@ export default class ResultsComponent {
   correctAnswers = computed(() => {
     const questions = structuredClone(this.quizService.questions());
     const correctQuestions = questions.filter(
-      (question) => question.selectedAnswer === question.correctAnswer,
+      (question) => question.selectedAnswerKey === question.correctAnswerKey,
     );
     return correctQuestions.length;
   });
@@ -33,12 +34,12 @@ export default class ResultsComponent {
 
   resultsText = computed(() => {
     const percentageResults = this.percentageResults();
-    if (percentageResults <= 50) {
-      return `results.text.bad`;
-    }
-    if (percentageResults <= 80) {
-      return `results.text.average`;
-    }
-    return `results.text.good`;
+    const foundThreshold = environment.resultsThresholds.find((threshold) => {
+      return (
+        threshold.minPercentage <= percentageResults &&
+        threshold.maxPercentage >= percentageResults
+      );
+    });
+    return foundThreshold ? foundThreshold.translationKey : ``;
   });
 }

@@ -1,5 +1,6 @@
 import { inject, Injectable, NgZone, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,6 @@ export class IdleService implements OnDestroy {
   private readonly ngZone = inject(NgZone);
 
   private timeout: any;
-  private readonly TIMEOUT_DURATION = 5 * 60 * 1000;
 
   constructor() {
     this.startWatching();
@@ -23,7 +23,7 @@ export class IdleService implements OnDestroy {
     clearTimeout(this.timeout);
     this.timeout = setTimeout(
       () => this.redirectToHome(),
-      this.TIMEOUT_DURATION,
+      environment.redirectHomeTimeoutDuration,
     );
   }
 
