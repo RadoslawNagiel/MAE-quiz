@@ -1,4 +1,4 @@
-<main>
+<div class="container">
   <header role="banner">
     <a [routerLink]="'/'">
       <div>HOME</div>
@@ -13,5 +13,7 @@
       }
     </div>
   </header>
-  <router-outlet />
-</main>
+  <main [@routeAnimations]="getRouteState(routerOutlet)">
+    <router-outlet #routerOutlet="outlet" />
+  </main>
+</div>
