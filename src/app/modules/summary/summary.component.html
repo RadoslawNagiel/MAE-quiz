@@ -1,16 +1,3 @@
-<section id="summary">
-  @for (question of questions(); track $index) {
-    <h1>{{ question.translationKey | translate }}</h1>
-
-    @for (answer of question.answers; track $index) {
-      <div
-        [ngClass]="{
-          'selected-answer': question.selectedAnswerKey === answer.key,
-          'correct-answer': question.correctAnswerKey === answer.key,
-        }"
-      >
-        {{ answer.translationKey | translate }}
-      </div>
-    }
-  }
+<section id="quiz">
+  <app-quiz-questions [showPreviousButton]="true" [isReadonly]="true" />
 </section>
