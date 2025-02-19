@@ -1,6 +1,3 @@
-<input
-  type="button"
-  [value]="text() | translate"
-  [routerLink]="routerLink()"
-  (click)="clicked.emit()"
-/>
+<a [routerLink]="routerLink()">
+  <input type="button" [value]="text() | translate" (click)="clicked.emit()" />
+</a>

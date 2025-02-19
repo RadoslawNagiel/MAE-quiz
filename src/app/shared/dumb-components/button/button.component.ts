@@ -4,12 +4,12 @@ import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-button',
-  imports: [RouterLink, TranslateModule],
+  imports: [TranslateModule, RouterLink],
   templateUrl: './button.component.html',
   styleUrl: './button.style.scss',
 })
 export default class ButtonComponent {
   text = input.required<string>();
-  routerLink = input<string>();
+  routerLink = input.required<string>();
   clicked = output();
 }

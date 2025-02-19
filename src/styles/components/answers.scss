@@ -16,23 +16,24 @@
   border-radius: 24px;
   height: 80px;
 
-  transition-duration: 0.3s;
-  transition-property: box-shadow, color, text-shadow;
-  transition-timing-function: ease-in-out;
+  cursor: pointer;
+  transition: var(--button-transition);
+
+  &:hover {
+    box-shadow: var(--hover-neon-box-shadow);
+    text-shadow: var(--hover-neon-text-shadow);
+  }
 
   &-selected {
     color: white;
     border: 3px solid white;
-    box-shadow:
-      0 0 4px white,
-      0 0 24px var(--tertiary-neon-color),
-      0 0 12px var(--tertiary-neon-color),
-      0 0 32px var(--tertiary-neon-color),
-      inset 0 0 16px var(--tertiary-neon-color) !important;
+    box-shadow: var(--active-neon-box-shadow) !important;
+    text-shadow: var(--active-neon-text-shadow) !important;
+  }
+}
 
-    text-shadow:
-      0 0 8px #fff,
-      0 0 16px var(--tertiary-neon-color),
-      0 0 32px var(--tertiary-neon-color);
+@media (hover: none) {
+  input {
+    cursor: default !important;
   }
 }

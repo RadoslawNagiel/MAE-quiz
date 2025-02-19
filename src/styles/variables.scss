@@ -9,4 +9,19 @@
   --tertiary-neon-color: hsl(286, 56%, 61%);
 
   --quaternary-color: #1b1833;
+
+  --button-transition: all 0.3s ease-in-out;
+
+  --hover-neon-box-shadow:
+    0 0 4px white, 0 0 12px var(--tertiary-neon-color),
+    inset 0 0 8px var(--tertiary-neon-color);
+  --hover-neon-text-shadow: 0 0 6px #fff;
+
+  --active-neon-box-shadow:
+    0 0 4px white, 0 0 24px var(--tertiary-neon-color),
+    0 0 12px var(--tertiary-neon-color), 0 0 32px var(--tertiary-neon-color),
+    inset 0 0 16px var(--tertiary-neon-color);
+  --active-neon-text-shadow:
+    0 0 8px #fff, 0 0 16px var(--tertiary-neon-color),
+    0 0 32px var(--tertiary-neon-color);
 }
