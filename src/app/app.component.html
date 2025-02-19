@@ -1,12 +1,21 @@
 <div class="container">
   <header role="banner">
     <a [routerLink]="'/'">
-      <div>HOME</div>
+      <input
+        class="home-button"
+        type="button"
+        [value]="'header.homeButton' | translate"
+      />
     </a>
     <div id="languages-container">
       @for (language of languages; track $index) {
         <input
+          class="language-button"
           type="button"
+          [ngClass]="{
+            'selected-language':
+              languageService.selectedLanguage() === language.langKey,
+          }"
           (click)="languageService.setLanguage(language.langKey)"
           [value]="language.value | translate"
         />

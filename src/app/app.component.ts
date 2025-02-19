@@ -5,10 +5,11 @@ import { environment } from '../environments/environment';
 import { routeAnimations } from './shared/animations/route-animations';
 import { IdleService } from './shared/services/idle.service';
 import { LanguageService } from './shared/services/language.service';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, TranslateModule],
+  imports: [RouterOutlet, RouterLink, TranslateModule, NgClass],
   templateUrl: `./app.component.html`,
   styleUrl: `./app.style.scss`,
   animations: [routeAnimations],

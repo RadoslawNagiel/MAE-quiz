@@ -1,10 +1,11 @@
 header {
-  height: 2em;
+  height: 40px;
   background-color: rgba(0, 0, 0, 0.2);
-  padding: 1em;
+  padding: 12px 32px;
 
   display: flex;
   justify-items: center;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -16,7 +17,7 @@ main {
 #languages-container {
   display: flex;
   justify-items: center;
-  gap: 0.5em;
+  gap: 12px;
 }
 
 .container {
@@ -30,4 +31,42 @@ main {
     var(--tertiary-color) 66%,
     var(--quaternary-color) 100%
   );
+}
+
+.language-button,
+.home-button {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 4px 8px;
+  border: 1px solid var(--light-color);
+  border-radius: 8px 0px;
+
+  background-color: transparent;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  opacity: 0.8;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active {
+    opacity: 1 !important;
+    box-shadow: var(--hover-neon-box-shadow) !important;
+    text-shadow: var(--hover-neon-text-shadow) !important;
+  }
+}
+
+@media (hover: none) {
+  .language-button {
+    cursor: default !important;
+  }
+}
+
+.selected-language {
+  opacity: 1 !important;
+  box-shadow: var(--hover-neon-box-shadow);
+  text-shadow: var(--hover-neon-text-shadow);
 }
