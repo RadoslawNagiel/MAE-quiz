@@ -20,7 +20,7 @@ export const routes: Routes = [
     data: { animation: 'results' },
   },
   {
-    path: `summary`,
+    path: `summary/:index`,
     canActivate: [() => inject(QuizService).isQuizAnswered(true)],
     loadComponent: async () => import(`./modules/summary/summary.component`),
     data: { animation: 'summary' },

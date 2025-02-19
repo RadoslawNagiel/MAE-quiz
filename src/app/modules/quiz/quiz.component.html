@@ -1,41 +1,6 @@
 <section id="quiz">
-  @for (question of questions(); track $index; let questionIndex = $index) {
-    <div
-      class="page-container"
-      [ngClass]="{
-        'question-before': currentQuestion() > $index,
-        'question-after': currentQuestion() < $index,
-      }"
-    >
-      <h1>{{ question.translationKey | translate }}</h1>
-
-      <div class="answers-container">
-        @for (answer of question.answers; track $index) {
-          <input
-            type="button"
-            class="answer"
-            [ngClass]="{
-              'answer-selected': question.selectedAnswerKey === answer.key,
-            }"
-            (click)="quizService.selectAnswer(currentQuestion(), answer.key)"
-            [value]="answer.translationKey | translate"
-          />
-        }
-      </div>
-
-      <div
-        class="next-button"
-        [ngClass]="{ 'next-button-hidden': !question.selectedAnswerKey }"
-      >
-        @if (questionIndex === questions().length - 1) {
-          <app-button [text]="'quiz.seeResults'" [routerLink]="'/results'" />
-        } @else {
-          <app-button
-            [text]="'quiz.nextQuestion'"
-            [routerLink]="'/quiz/' + (currentQuestion() + 1)"
-          />
-        }
-      </div>
-    </div>
-  }
+  <app-quiz-questions [finishButton]="finishButton" />
+  <ng-template #finishButton>
+    <app-button [text]="'quiz.seeResults'" [routerLink]="'/results'" />
+  </ng-template>
 </section>

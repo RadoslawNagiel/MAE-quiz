@@ -5,8 +5,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
-  grid-column-gap: 2em;
-  grid-row-gap: 2em;
+  grid-column-gap: 32px;
+  grid-row-gap: 32px;
 }
 
 .answer {
@@ -29,6 +29,16 @@
     border: 3px solid white;
     box-shadow: var(--active-neon-box-shadow) !important;
     text-shadow: var(--active-neon-text-shadow) !important;
+  }
+
+  &-correct {
+    color: var(--success-color);
+    border: 3px solid var(--success-color);
+  }
+
+  &-wrong {
+    color: var(--danger-color);
+    border: 3px solid var(--danger-color);
   }
 }
 

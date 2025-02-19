@@ -1,4 +1,7 @@
 {
+  "header": {
+    "homeButton": "Home page"
+  },
   "home": {
     "welcomeText": "Welcome!",
     "startButton": "Start the quiz"
@@ -25,6 +28,7 @@
       "wrongAnswer2": "Baroque",
       "wrongAnswer3": "Cubism"
     },
+    "previousQuestion": "Previous question",
     "nextQuestion": "Next question",
     "seeResults": "See results"
   },
