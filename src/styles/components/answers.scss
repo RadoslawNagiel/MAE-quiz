@@ -1,0 +1,38 @@
+.answers-container {
+  width: 100%;
+  margin-bottom: auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
+}
+
+.answer {
+  font-size: 24px;
+  background-color: transparent;
+  border: 3px solid var(--light-color);
+  border-radius: 24px;
+  height: 80px;
+
+  transition-duration: 0.3s;
+  transition-property: box-shadow, color, text-shadow;
+  transition-timing-function: ease-in-out;
+
+  &-selected {
+    color: white;
+    border: 3px solid white;
+    box-shadow:
+      0 0 4px white,
+      0 0 24px var(--tertiary-neon-color),
+      0 0 12px var(--tertiary-neon-color),
+      0 0 32px var(--tertiary-neon-color),
+      inset 0 0 16px var(--tertiary-neon-color) !important;
+
+    text-shadow:
+      0 0 8px #fff,
+      0 0 16px var(--tertiary-neon-color),
+      0 0 32px var(--tertiary-neon-color);
+  }
+}

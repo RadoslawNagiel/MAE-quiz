@@ -1,12 +1,16 @@
 <section id="results">
-  <div>
-    {{ "results.correctAnswers" | translate: { value: correctAnswers() } }}
+  <div class="page-container">
+    <h1>
+      {{ resultsText() | translate }}
+    </h1>
+    <div>
+      <h2>
+        {{ "results.correctAnswers" | translate: { value: correctAnswers() } }}
+      </h2>
+      <h2>
+        {{ "results.wrongAnswers" | translate: { value: wrongAnswers() } }}
+      </h2>
+    </div>
+    <app-button [text]="'results.seeSummary'" [routerLink]="'/summary'" />
   </div>
-  <div>
-    {{ "results.wrongAnswers" | translate: { value: wrongAnswers() } }}
-  </div>
-  <div>
-    {{ resultsText() | translate }}
-  </div>
-  <app-button [text]="'results.seeSummary'" [routerLink]="'/summary'" />
 </section>
