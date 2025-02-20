@@ -5,7 +5,7 @@ input {
   background-color: transparent;
   border: 2px solid var(--light-color);
   border-radius: 8px 0px;
-  min-width: 200px;
+  min-width: 220px;
   text-transform: uppercase;
 
   cursor: pointer;
@@ -26,5 +26,10 @@ input {
 @media (hover: none) {
   input {
     cursor: default !important;
+
+    &:hover {
+      box-shadow: unset !important;
+      text-shadow: unset !important;
+    }
   }
 }

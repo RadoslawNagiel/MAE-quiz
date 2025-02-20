@@ -1,5 +1,5 @@
 header {
-  height: 40px;
+  height: 48px;
   background-color: rgba(0, 0, 0, 0.2);
   padding: 12px 32px;
 
@@ -60,8 +60,17 @@ main {
 }
 
 @media (hover: none) {
-  .language-button {
+  .language-button,
+  .home-button {
     cursor: default !important;
+  }
+
+  .home-button {
+    &:hover {
+      opacity: 0.8 !important;
+      box-shadow: unset !important;
+      text-shadow: unset !important;
+    }
   }
 }
 
