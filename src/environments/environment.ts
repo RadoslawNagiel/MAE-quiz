@@ -16,7 +16,13 @@ export const environment: Environment = {
     },
   ],
 
-  quizQuestions: [`question1`, `question2`, `question3`].map((key) => {
+  quizQuestions: [
+    `question1`,
+    `question2`,
+    `question3`,
+    `question4`,
+    `question5`,
+  ].map((key) => {
     return {
       key,
       translationKey: `quiz.${key}.value`,
