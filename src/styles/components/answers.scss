@@ -62,8 +62,8 @@
     cursor: default !important;
 
     &:hover {
-      box-shadow: unset !important;
-      text-shadow: unset !important;
+      box-shadow: unset;
+      text-shadow: unset;
     }
   }
 }

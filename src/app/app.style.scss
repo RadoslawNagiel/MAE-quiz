@@ -68,8 +68,8 @@ main {
   .home-button {
     &:hover {
       opacity: 0.8 !important;
-      box-shadow: unset !important;
-      text-shadow: unset !important;
+      box-shadow: unset;
+      text-shadow: unset;
     }
   }
 }
