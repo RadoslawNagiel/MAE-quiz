@@ -15,10 +15,17 @@ import { TranslateModule } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import ButtonComponent from '../../dumb-components/button/button.component';
 import { QuizService } from '../../services/quiz.service';
+import ProgressBarComponent from '../../dumb-components/progress-bar/progress-bar.component';
 
 @Component({
   selector: 'app-quiz-questions',
-  imports: [NgClass, TranslateModule, ButtonComponent, NgTemplateOutlet],
+  imports: [
+    NgClass,
+    TranslateModule,
+    ButtonComponent,
+    NgTemplateOutlet,
+    ProgressBarComponent,
+  ],
   templateUrl: './quiz-questions.component.html',
   styleUrl: './quiz-questions.style.scss',
 })
@@ -37,6 +44,17 @@ export default class QuizQuestionsComponent<T> implements OnInit, OnDestroy {
   currentQuestion = signal(0);
 
   routeSubscription = new Subscription();
+
+  progressBarPercentage = computed(() => {
+    const isSelected = Boolean(
+      this.questions()[this.currentQuestion()].selectedAnswerKey,
+    );
+    return Math.round(
+      ((this.currentQuestion() + (isSelected ? 1 : 0)) /
+        this.questions().length) *
+        100,
+    );
+  });
 
   questions = computed(() => {
     return this.quizService.questions();

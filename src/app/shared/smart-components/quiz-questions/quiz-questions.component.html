@@ -1,3 +1,5 @@
+<app-progress-bar [percentage]="progressBarPercentage()" />
+
 <div class="quiz-container">
   @for (question of questions(); track $index; let questionIndex = $index) {
     <div
@@ -7,7 +9,9 @@
         'question-after': currentQuestion() < $index,
       }"
     >
-      <h1>{{ question.translationKey | translate }}</h1>
+      <h1>
+        {{ 1 + questionIndex }}. {{ question.translationKey | translate }}
+      </h1>
 
       <div class="answers-container">
         @for (answer of question.answers; track $index) {

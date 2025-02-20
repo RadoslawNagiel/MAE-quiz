@@ -7,7 +7,6 @@ import { QuizService } from '../../shared/services/quiz.service';
   selector: 'app-home',
   imports: [TranslateModule, ButtonComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.style.scss',
 })
 export default class HomeComponent {
   readonly quizService = inject(QuizService);
